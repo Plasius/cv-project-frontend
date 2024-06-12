@@ -1,0 +1,60 @@
+.floating-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;  /* Ensure shapes are behind the content */
+}
+
+.shape {
+  position: absolute;
+  background: #2DAF64; /* Slightly darker green */
+  border-radius: 50%;
+  animation: float 5s infinite; /* Adjusted for faster floating */
+}
+
+.shape1 {
+  width: 500px;  /* Increased size */
+  height: 500px; /* Increased size */
+  top: 10%;
+  left: 20%;
+  animation-duration: 8s; /* Faster floating */
+}
+
+.shape2 {
+  width: 250px;  /* Increased size */
+  height: 250px; /* Increased size */
+  top: 10%;
+  left: 80%;
+  animation-duration: 10s; /* Faster floating */
+}
+
+.shape3 {
+  width: 750px;  /* Increased size */
+  height: 750px; /* Increased size */
+  top: 30%;
+  left: 40%;
+  animation-duration: 6s; /* Faster floating */
+}
+
+.shape4 {
+  width: 180px;  /* Increased size */
+  height: 180px; /* Increased size */
+  top: 80%;
+  left: 10%;
+  animation-duration: 12s; /* Faster floating */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-30px) translateX(30px); /* Adjusted for more noticeable floating */
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
