@@ -5,10 +5,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        customFont: ["satoshi"],
-        // Add more custom font families as needed
-      },
     },
   },
   plugins: [],
