@@ -37,40 +37,202 @@ function Form() {
           </div>
           <div className="mb-4">
             <label htmlFor="companyLocationState" className="block text-lg text-left">Which state is your company registered in?</label>
-            <input type="text" id="companyLocationState" name="companyLocationState" value={formData.companyLocationState} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full" />
+            <select id="companyLocationState" name="companyLocationState" value={formData.companyLocationState} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+              <option value="">Select a state</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
           </div>
+
           <div className="mb-4">
             <label htmlFor="bankName" className="block text-lg text-left">Which bank is your company applying for the loan with?</label>
             <input type="text" id="bankName" name="bankName" value={formData.bankName} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full" />
           </div>
           <div className="mb-4">
-            <label htmlFor="bankLocationState" className="block text-lg text-left">In which state is the bank located in?</label>
-            <input type="text" id="bankLocationState" name="bankLocationState" value={formData.bankLocationState} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full" />
+            <label htmlFor="bankLocationState" className="block text-lg text-left">In which state is the bank located?</label>
+            <select id="bankLocationState" name="bankLocationState" value={formData.bankLocationState} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+              <option value="">Select a state</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
           </div>
           <div className="mb-4">
-            <label htmlFor="naicsCode" className="block text-lg text-left">What is the NAICS code for your company's industry? (You can find this on your business registration documents.)</label>
-            <input type="text" id="naicsCode" name="naicsCode" value={formData.naicsCode} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full" />
+            <label htmlFor="companyNAICSCode" className="block text-lg text-left">What is the NAICS code for your company's industry? (You can find this on your business registration documents.)</label>
+            <select id="companyNAICSCode" name="companyNAICSCode" value={formData.companyNAICSCode} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+              <option value="">Select a NAICS code</option>
+              <option value="11">11 - Agriculture, Forestry, Fishing and Hunting</option>
+              <option value="21">21 - Mining, Quarrying, and Oil and Gas Extraction</option>
+              <option value="22">22 - Utilities</option>
+              <option value="23">23 - Construction</option>
+              <option value="31">31-33 - Manufacturing</option>
+              <option value="42">42 - Wholesale Trade</option>
+              <option value="44">44-45 - Retail Trade</option>
+              <option value="48">48-49 - Transportation and Warehousing</option>
+              <option value="51">51 - Information</option>
+              <option value="52">52 - Finance and Insurance</option>
+              <option value="53">53 - Real Estate and Rental and Leasing</option>
+              <option value="54">54 - Professional, Scientific, and Technical Services</option>
+              <option value="55">55 - Management of Companies and Enterprises</option>
+              <option value="56">56 - Administrative and Support and Waste Management and Remediation Services</option>
+              <option value="61">61 - Educational Services</option>
+              <option value="62">62 - Health Care and Social Assistance</option>
+              <option value="71">71 - Arts, Entertainment, and Recreation</option>
+              <option value="72">72 - Accommodation and Food Services</option>
+              <option value="81">81 - Other Services (except Public Administration)</option>
+              <option value="92">92 - Public Administration</option>
+            </select>
           </div>
+
           <div className="mb-4">
             <label htmlFor="loanTerm" className="block text-lg text-left">What loan term is your company applying for? (in months)</label>
-            <input type="text" id="loanTerm" name="loanTerm" value={formData.loanTerm} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full" />
+            <input 
+              type="number" 
+              id="loanTerm" 
+              name="loanTerm" 
+              value={formData.loanTerm} 
+              onChange={handleChange} 
+              className="px-4 py-2 bg-gray-100 rounded-lg w-full" 
+              min="0" 
+              step="1" 
+            />
           </div>
           <div className="mb-4">
             <label htmlFor="grossApprovalAmount" className="block text-lg text-left">What is the gross approval amount your company is applying for? (in USD)</label>
-            <input type="text" id="grossApprovalAmount" name="grossApprovalAmount" value={formData.grossApprovalAmount} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full" />
+            <input 
+              type="number" 
+              id="grossApprovalAmount" 
+              name="grossApprovalAmount" 
+              value={formData.grossApprovalAmount} 
+              onChange={handleChange} 
+              className="px-4 py-2 bg-gray-100 rounded-lg w-full" 
+              min="0" 
+              step="0.01" 
+            />
           </div>
+
           <div className="mb-4">
             <label htmlFor="realEstateLoan" className="block text-lg text-left">Is your company planning to use this loan for real estate purposes?</label>
-            <input type="text" id="realEstateLoan" name="realEstateLoan" value={formData.realEstateLoan} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full" />
+            <select id="realEstateLoan" name="realEstateLoan" value={formData.realEstateLoan} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+              <option value="">Select an option</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
+
           <div className="mb-4">
-            <label htmlFor="businessLocation" className="block text-lg text-left">Is your company's primary location in an urban or rural area?</label>
-            <input type="text" id="businessLocation" name="businessLocation" value={formData.businessLocation} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full" />
+            <label htmlFor="primaryLocation" className="block text-lg text-left">Is your company's primary location in an urban or rural area?</label>
+            <select id="primaryLocation" name="primaryLocation" value={formData.primaryLocation} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+              <option value="">Select an option</option>
+              <option value="Urban">Urban</option>
+              <option value="Rural">Rural</option>
+            </select>
           </div>
+
           <div className="mb-4">
-            <label htmlFor="revolvingCredit" className="block text-lg text-left">Does your company have a revolving line of credit with the bank?</label>
-            <input type="text" id="revolvingCredit" name="revolvingCredit" value={formData.revolvingCredit} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full" />
+            <label htmlFor="revolvingLineOfCredit" className="block text-lg text-left">Does your company have a revolving line of credit with the bank?</label>
+            <select id="revolvingLineOfCredit" name="revolvingLineOfCredit" value={formData.revolvingLineOfCredit} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+              <option value="">Select an option</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
+
           <div className="flex mt-8 justify-center">
             <Link className="w-25" to="/">
               <p className="mr-2 px-4 py-2 text-green-600 text-lg hover:text-green-700 hover:font-semibold">
