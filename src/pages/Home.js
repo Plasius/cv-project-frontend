@@ -9,11 +9,11 @@ function Home() {
         <div className="relative z-10">
         <h1 className="text-6xl mb-4">Welcome to LoanIQ</h1>
         <p className="mb-4 text-lg tracking-wide text-gray-400">
-        Your intelligent companion for SBA loan assessment. Powered by a machine learning algorithm, LoanIQ analyzes vast data from past SBA loans to offer risk assessment for yours.
+        Your intelligent companion for SBA loan assessment. Powered by a machine learning algorithm, LoanIQ analyzes vast data from past SBA loans to offer personalized risk assessment for your business.
         </p>
           <Link to="/form">
             <p className="py-2 justify-center font-semibold font-sans text-2xl text-green-500 rounded-lg">
-                Evaluate >>
+                Evaluate &gt;&gt;
             </p>
           </Link>
         </div>
