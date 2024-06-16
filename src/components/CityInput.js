@@ -6,11 +6,13 @@ const CityInput = ({ formData, setFormData }) => {
   const [loading, setLoading] = useState(false);
   const [activeSuggestion, setActiveSuggestion] = useState(-1);
 
+  const apiURL = process.env.REACT_APP_BACKEND_API_URL;
+
   useEffect(() => {
     if (formData.City.trim() !== '') {
       setLoading(true);
       // Replace with your API endpoint for city suggestions
-      axios.get(`http://localhost:8080/api/v1/cities?q=${formData.City}`)
+      axios.get(`${apiURL}/api/v1/cities?q=${formData.City}`)
         .then(response => {
           const data = response.data;
           // Check for exact match
@@ -66,6 +68,7 @@ const CityInput = ({ formData, setFormData }) => {
         In which city is your company registered in?
       </label>
       <input
+        required
         type="text"
         id="cityInput"
         name="City"

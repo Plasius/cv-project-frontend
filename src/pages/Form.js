@@ -21,6 +21,7 @@ function Form() {
     Default: 0,
   });
 
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -28,29 +29,28 @@ function Form() {
     });
   };
 
+
   const navigate = useNavigate();
+
+  const apiURL = process.env.REACT_APP_BACKEND_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     try {
       console.log(formData);
-      console.log(1);
-      const response = await axios.post('http://localhost:8080/api/v1/form', formData, {
+      
+      const response = await axios.post(apiURL+'/api/v1/form', formData, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      console.log(2);
       if (response.status === 200) {
-        console.log(3);
         const data = response.data;
         const hasHighDefaultRisk = data.high_default_risk == "1";
-        console.log("hasHighDefaultRisk: " + hasHighDefaultRisk);
 
         navigate('/result', { state: { hasHighDefaultRisk } });
       } else {
-        console.log(4);
         throw new Error('Network response was not ok');
       }
 
@@ -71,7 +71,7 @@ function Form() {
 
           <div className="mb-4">
             <label htmlFor="companyLocationState" className="block text-lg text-left">Which state is your company registered in?</label>
-            <select id="companyLocationState" name="State" value={formData.companyLocationState} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+            <select required id="companyLocationState" name="State" value={formData.companyLocationState} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
               <option value="">Select a state</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -130,7 +130,7 @@ function Form() {
 
           <div className="mb-4">
             <label htmlFor="bankLocationState" className="block text-lg text-left">In which state is the bank located?</label>
-            <select id="bankLocationState" name="BankState" value={formData.bankLocationState} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+            <select required id="bankLocationState" name="BankState" value={formData.bankLocationState} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
               <option value="">Select a state</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -186,7 +186,7 @@ function Form() {
           </div>
           <div className="mb-4">
             <label htmlFor="companyNAICSCode" className="block text-lg text-left">What is the NAICS code for your company's industry? (You can find this on your business registration documents.)</label>
-            <select id="companyNAICSCode" name="NAICS" value={formData.companyNAICSCode} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+            <select required id="companyNAICSCode" name="NAICS" value={formData.companyNAICSCode} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
               <option value="">Select a NAICS code</option>
               <option value="11">11 - Agriculture, Forestry, Fishing and Hunting</option>
               <option value="21">21 - Mining, Quarrying, and Oil and Gas Extraction</option>
@@ -214,6 +214,7 @@ function Form() {
           <div className="mb-4">
             <label htmlFor="noEmp" className="block text-lg text-left">What is the current number of employees in the company?</label>
             <input 
+              required
               type="number" 
               id="noEmp" 
               name="NoEmp"
@@ -229,6 +230,7 @@ function Form() {
           <div className="mb-4">
             <label htmlFor="loanTerm" className="block text-lg text-left">What loan term is your company applying for? (in months)</label>
             <input 
+              required
               type="number" 
               id="loanTerm" 
               name="Term"
@@ -243,6 +245,7 @@ function Form() {
           <div className="mb-4">
             <label htmlFor="grossApprovalAmount" className="block text-lg text-left">What is the gross amount your company is applying for? (in USD)</label>
             <input 
+              required
               type="number" 
               id="grossApprovalAmount" 
               name="GrAppv" 
@@ -257,7 +260,7 @@ function Form() {
 
           <div className="mb-4">
             <label htmlFor="realEstateLoan" className="block text-lg text-left">Is your company planning to use this loan for real estate purposes?</label>
-            <select id="realEstateLoan" name="RealEstate" value={formData.realEstateLoan} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+            <select required id="realEstateLoan" name="RealEstate" value={formData.realEstateLoan} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
               <option value="">Select an option</option>
               <option value="1">Yes</option>
               <option value="0">No</option>
@@ -266,7 +269,7 @@ function Form() {
 
           <div className="mb-4">
             <label htmlFor="urbanRural" className="block text-lg text-left">Is your company's primary location in an urban or rural area?</label>
-            <select id="urbanRural" name="UrbanRural" value={formData.primaryLocation} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+            <select required id="urbanRural" name="UrbanRural" value={formData.primaryLocation} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
               <option value="">Select an option</option>
               <option value="1">Urban</option>
               <option value="2">Rural</option>
@@ -275,7 +278,7 @@ function Form() {
 
           <div className="mb-4">
             <label htmlFor="revolvingLineOfCredit" className="block text-lg text-left">Does your company have a revolving line of credit with the bank?</label>
-            <select id="revolvingLineOfCredit" name="RevLineCr" value={formData.revolvingLineOfCredit} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
+            <select required id="revolvingLineOfCredit" name="RevLineCr" value={formData.revolvingLineOfCredit} onChange={handleChange} className="px-4 py-2 bg-gray-100 rounded-lg w-full">
               <option value="">Select an option</option>
               <option value="Y">Yes</option>
               <option value="N">No</option>

@@ -5,12 +5,14 @@ const BankInput = ({ formData, setFormData }) => {
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [activeSuggestion, setActiveSuggestion] = useState(-1);
+  
+  const apiURL = process.env.REACT_APP_BACKEND_API_URL;
 
   useEffect(() => {
     if (formData.Bank.trim() !== '') {
       setLoading(true);
       // Replace with your API endpoint for bank suggestions
-      axios.get(`http://localhost:8080/api/v1/banks?q=${formData.Bank}`)
+      axios.get(`${apiURL}/api/v1/banks?q=${formData.Bank}`)
         .then(response => {
           const data = response.data;
           // Check for exact match
@@ -66,6 +68,7 @@ const BankInput = ({ formData, setFormData }) => {
         Which bank is your company applying for the loan with?
       </label>
       <input
+        required
         type="text"
         id="bankInput"
         name="Bank"
