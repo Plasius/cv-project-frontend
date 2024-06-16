@@ -6,9 +6,9 @@ const BankInput = ({ formData, setFormData }) => {
   const [loading, setLoading] = useState(false);
   const [activeSuggestion, setActiveSuggestion] = useState(-1);
   
-  const apiURL = process.env.REACT_APP_BACKEND_API_URL;
-
   useEffect(() => {
+    const apiURL = process.env.REACT_APP_BACKEND_API_URL;
+
     if (formData.Bank.trim() !== '') {
       setLoading(true);
       // Replace with your API endpoint for bank suggestions
